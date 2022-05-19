@@ -58,7 +58,7 @@ BOARD_SAMSUNG_DYNAMIC_PARTITIONS_PARTITION_LIST := system vendor product odm cus
 # File systems
 BOARD_BOOTIMAGE_PARTITION_SIZE := 33554432 
 BOARD_HAS_LARGE_FILESYSTEM := true
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 33554432
+#BOARD_RECOVERYIMAGE_PARTITION_SIZE := 33554432
 BOARD_SYSTEMIMAGE_PARTITION_TYPE := ext4
 BOARD_PRODUCTIMAGE_PARTITION_TYPE := ext4
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -122,3 +122,50 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/kernel/config/usb_gadget/g1/functions/m
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 PLATFORM_SECURITY_PATCH := 2099-12-31
 PLATFORM_VERSION := 10.0
+
+
+# Device codename
+# Default (if not set): N/A
+SHRP_DEVICE_CODE := a53_a53_32
+
+# Path of your SHRP device tree
+# Replace <device-brand> with the device brand name
+# (SHRP_DEVICE_CODE will expand to the above variable so check if that is correct)
+SHRP_PATH := device/huawei/$(SHRP_DEVICE_CODE)
+
+# Maintainer name
+# Default (if not set): N/A
+SHRP_MAINTAINER := smily
+
+# Recovery Type (for "About" section only)
+# Default (if not set): N/A
+SHRP_REC_TYPE := Normal
+
+# Device Type (for "About" section only)
+# Default (if not set): N/A
+SHRP_DEVICE_TYPE := A/B
+
+# internal storage path
+# Default (if not set): /sdcard
+SHRP_INTERNAL := /sdcard
+
+# If your device has an external sdcard
+# Default (if not set): /
+SHRP_EXTERNAL := /external_sd
+
+# USB OTG path
+# Default (if not set): /
+SHRP_OTG := /usb_otg
+
+# Flashlight: (0 = disable, 1 = enable)
+# Default (if not set): 0
+SHRP_FLASH := 1
+
+################## #########################################################################
+# OPTIONAL FLAGS # Stuff which highly depends on your device and / or personal preferences #
+################## #########################################################################
+
+# Use this flag only if your device is A/B.
+# Default (if not set) is no A/B device
+# Set this variable when true ONLY (do not use "false" or similiar)
+SHRP_AB := true
