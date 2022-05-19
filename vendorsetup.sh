@@ -1,0 +1,2 @@
+add_lunch_combo omni_a53_a53_32-userdebug
+add_lunch_combo omni_a53_a53_32-eng
